@@ -1,0 +1,204 @@
+<!-- язык: HTML, файл: index.html, цель: статический лендинг чита -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FunTimeClient — чит для Minecraft 1.21.1</title>
+<style>
+  :root{
+    --bg:#0b0d10; --panel:#12161b; --line:#1f262e;
+    --text:#e6edf3; --muted:#8b98a5; --accent:#e63946; --accent2:#ff6b6b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6}
+  a{color:var(--accent2);text-decoration:none}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+  header{
+    border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,#12161b 0%,#0b0d10 100%);
+    padding:80px 0 60px;text-align:center;position:relative;overflow:hidden;
+  }
+  header::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 50% 0%,rgba(230,57,70,.15),transparent 60%);
+    pointer-events:none;
+  }
+  .logo{font-size:42px;font-weight:800;letter-spacing:-1px}
+  .logo span{color:var(--accent)}
+  .tagline{color:var(--muted);margin-top:12px;font-size:18px}
+  .badges{margin-top:24px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .badge{
+    border:1px solid var(--line);background:var(--panel);
+    padding:6px 14px;border-radius:20px;font-size:13px;color:var(--muted);
+  }
+
+  .cta{margin-top:32px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .btn{
+    display:inline-block;padding:14px 28px;border-radius:8px;
+    font-weight:600;font-size:16px;transition:.15s;
+  }
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{background:var(--accent2);transform:translateY(-1px)}
+  .btn-ghost{border:1px solid var(--line);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent2)}
+
+  section{padding:70px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:28px;margin-bottom:30px;letter-spacing:-.5px}
+  h2 span{color:var(--accent)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+  .card{
+    background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:22px;transition:.15s;
+  }
+  .card:hover{border-color:var(--accent);transform:translateY(-2px)}
+  .card h3{font-size:17px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:14px}
+  .icon{font-size:24px;margin-bottom:10px;display:block}
+
+  .steps{counter-reset:s;list-style:none}
+  .steps li{
+    counter-increment:s;position:relative;padding-left:52px;margin-bottom:22px;
+    color:var(--muted);font-size:15px;
+  }
+  .steps li::before{
+    content:counter(s);position:absolute;left:0;top:-2px;
+    width:34px;height:34px;border-radius:50%;background:var(--panel);
+    border:1px solid var(--accent);color:var(--accent);font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .steps li b{color:var(--text);display:block;margin-bottom:2px}
+
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line)}
+  th{color:var(--muted);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+  td{color:var(--text)}
+  .tag-on{color:#4ade80} .tag-off{color:#f87171}
+
+  code{
+    background:var(--panel);border:1px solid var(--line);
+    padding:2px 7px;border-radius:5px;font-family:'JetBrains Mono',monospace;
+    font-size:13px;color:var(--accent2);
+  }
+
+  footer{padding:40px 0;text-align:center;color:var(--muted);font-size:13px}
+  .disclaimer{
+    max-width:700px;margin:0 auto 16px;padding:16px;
+    background:rgba(230,57,70,.08);border:1px solid rgba(230,57,70,.25);
+    border-radius:10px;font-size:13px;color:#d0a0a4;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">FunTime<span>Client</span></div>
+    <p class="tagline">Чит для Minecraft 1.21.1 · Forge · обход античита FunTime</p>
+    <div class="badges">
+      <span class="badge">Forge 52.0.x</span>
+      <span class="badge">Minecraft 1.21.1</span>
+      <span class="badge">Java 21</span>
+      <span class="badge">v1.0.0</span>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" href="#download">Скачать</a>
+      <a class="btn btn-ghost" href="#install">Как установить</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Что <span>внутри</span></h2>
+    <div class="grid">
+      <div class="card">
+        <span class="icon">⚔️</span>
+        <h3>KillAura</h3>
+        <p>Автоудар с ограничением угловой скорости, jitter aim и LOS-проверкой. Ротация как у человека, без снапов.</p>
+      </div>
+      <div class="card">
+        <span class="icon">📡</span>
+        <h3>Reach с пинг-компенсацией</h3>
+        <p>Дистанция удара подстраивается под пинг, но не выходит за 3.10 — чтобы античит не видел телепорт-удар.</p>
+      </div>
+      <div class="card">
+        <span class="icon">🎯</span>
+        <h3>CPS-рандомизация</h3>
+        <p>Интервал между ударами 4–12 CPS с разбросом ±15%. Никакого фиксированного «пулемёта».</p>
+      </div>
+      <div class="card">
+        <span class="icon">📊</span>
+        <h3>HUD</h3>
+        <p>Панель с состоянием, таргетом, CPS, reach и пингом прямо в игре.</p>
+      </div>
+      <div class="card">
+        <span class="icon">⚙️</span>
+        <h3>GUI и бинды</h3>
+        <p>Меню с тумблерами и биндами. Right Shift — меню, R — toggle, всё меняется на месте.</p>
+      </div>
+      <div class="card">
+        <span class="icon">💾</span>
+        <h3>Конфиг</h3>
+        <p>Настройки сохраняются в <code>config/ka.json</code> — бинды, reach, CPS, through walls.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <h2>Как <span>установить</span></h2>
+    <ol class="steps">
+      <li><b>Поставь Forge 1.21.1</b>Через официальный установщик Forge, версия 52.0.x.</li>
+      <li><b>Скачай .jar</b>Файл из раздела «Скачать» ниже, без <code>-sources</code>.</li>
+      <li><b>Закинь в mods</b>Папка <code>.minecraft/mods/</code> — просто положи туда файл.</li>
+      <li><b>Запусти игру</b>Профиль Forge 1.21.1 в лаунчере. В главном меню — Mods → KA.</li>
+      <li><b>Настрой</b><code>Right Shift</code> — меню, <code>R</code> — включить ауру.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Версии и <span>требования</span></h2>
+    <table>
+      <tr><th>Параметр</th><th>Значение</th></tr>
+      <tr><td>Minecraft</td><td>1.21.1</td></tr>
+      <tr><td>Загрузчик</td><td>Forge 52.0.x</td></tr>
+      <tr><td>Java</td><td>21 (Temurin / Oracle)</td></tr>
+      <tr><td>Сторона</td><td>Клиентская</td></tr>
+      <tr><td>Through walls</td><td><span class="tag-off">по умолчанию OFF</span></td></tr>
+      <tr><td>Конфиг</td><td><code>config/ka.json</code></td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap" style="text-align:center">
+    <h2>Скачать <span>FunTimeClient</span></h2>
+    <p style="color:var(--muted);margin-bottom:28px">
+      Сборка под Forge 1.21.1. Перед запуском прочитай дисклеймер ниже.
+    </p>
+    <a class="btn btn-primary" href="FunTimeClient-1.0.0.jar" download>Скачать .jar (v1.0.0)</a>
+    <p style="margin-top:18px;font-size:13px;color:var(--muted)">
+      Файл кладётся рядом с этим <code>index.html</code> или меняется ссылка на реальный URL.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">
+      ⚠️ Чит нарушает правила серверов и может привести к бану аккаунта.
+      Использование — на свой риск. Не запускай на аккаунтах, которые тебе дороги.
+      Сайт не связан с Mojang, Microsoft или администрацией FunTime.
+    </div>
+    <p>FunTimeClient · v1.0.0 · Minecraft 1.21.1 · Forge</p>
+  </div>
+</footer>
+
+</body>
+                                                                                  </html>
